@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucket List</title>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div style="margin-top: 50px;"class="ui container">
+        <h1 class="ui center aligned header">Wendy's Bucket List</h1>
+
+        <div class="d-flex flex-column justify-content-center w-100 h-100">
+
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h1 class="fw-light text-white m-0"></h1>
+                <div class="btn-group my-5">
+                    <a href="https://codepen-api-export-production.s3.us-west-2.amazonaws.com/zip/PEN/pyBNzX/1578778289271/pure-css-gradient-background-animation.zip" class="btn btn-outline-light" aria-current="page"><i class="fas fa-file-download me-2"></i></a>
+                    <a href="https://codepen.io/P1N2O/full/pyBNzX" class="btn btn-outline-light"><i class="fas fa-expand ms-2"></i></a>
+                </div>
+                <a href="" class="text-decoration-none">
+                    <h5 class="fw-light text-white m-0"></h5>
+                </a>
+            </div>
+        </div>
+        </div>
+
+        <form class= "ui form" action="/add" method="POST">
+            <div class="field">
+                <label for="title">Bucket List Item</label>
+                <input type="text" name="title" placeholder="Enter Item">
+                <br>
+                <button class="ui blue button" type="submit">Add</button>
+            </div>
+        </form>
+    
+        {% for todo in todo_list %}
+        <div class="ui segment">
+            <p class="ui big header>" {{ todo.id }} | {{ todo.title }}</p>
+            {% if todo.complete == False %}
+               <span class="ui gray label">Not Complete</span>
+            {% else %}
+               <span class="ui green label">Completed</span>
+            {% endif %}
+       
+            <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+            <a class="ui pink button" href="/delete/{{ todo.id }}">Delete</a>
+        </div>
+    
+        {% endfor %}
+    </div>
+</body>
+</html>
