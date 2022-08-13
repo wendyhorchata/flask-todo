@@ -11,7 +11,7 @@
 </head>
 <body>
     <div style="margin-top: 50px;"class="ui container">
-        <h1 class="ui center aligned header">Wendy's Bucket List</h1>
+        <h1 class="ui center aligned header">Wendy's Todo List</h1>
 
         <div class="d-flex flex-column justify-content-center w-100 h-100">
 
@@ -28,9 +28,19 @@
         </div>
         </div>
 
+
+
+
+        <div class="ui grid">
+            <div class="five wide column"></div>
+            <div class="five wide column">
+
+
+
+
         <form class= "ui form" action="/add" method="POST">
             <div class="field">
-                <label for="title">Bucket List Item</label>
+                <label for="title">Todo Item</label>
                 <input type="text" name="title" placeholder="Enter Item">
                 <br>
                 <button class="ui blue button" type="submit">Add</button>
@@ -39,7 +49,7 @@
     
         {% for todo in todo_list %}
         <div class="ui segment">
-            <p class="ui big header>" {{ todo.id }} | {{ todo.title }}</p>
+            <p class="ui big header"> {{ todo.id }} | {{ todo.title }}</p>
             {% if todo.complete == False %}
                <span class="ui gray label">Not Complete</span>
             {% else %}
@@ -51,6 +61,8 @@
         </div>
     
         {% endfor %}
+        </div>
+        </div>
     </div>
 </body>
 </html>
