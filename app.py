@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for 
 from flask_sqlalchemy import SQLAlchemy
+from waitress import serve
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
@@ -42,6 +43,5 @@ def delete(todo_id):
     return redirect(url_for("home"))
 
 if __name__ == '__main__':
-    app = app.py()
-    app.run()
+    serve(app, host="0.0.0.0", port=8080)
 
