@@ -5,7 +5,7 @@ This project is a simple todo app using Python programming Language, Flask Frame
 ## Models
  <img width="663" alt="models" src="https://user-images.githubusercontent.com/53509151/185215611-3ecbaca3-dc0d-488e-a1db-18fc646fc83f.png">
 
-##Wire Frame 
+## Wire Frame 
 ![Website Idea](https://user-images.githubusercontent.com/53509151/185218135-6aa779f8-9dbe-4012-b36b-5f452c818ba9.png)
 
    
