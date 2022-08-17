@@ -42,6 +42,6 @@ def delete(todo_id):
     db.session.commit()
     return redirect(url_for("home"))
 
-if __name__ == '__main__':
-    serve(app, host="0.0.0.0", port=8080)
+#if __name__ == '__main__':
+#serve(app, host="0.0.0.0", port=8080)
 

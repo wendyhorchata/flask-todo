@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT flask-todo:app
+web: gunicorn wsgi:app 
